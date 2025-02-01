@@ -52,8 +52,7 @@ const Footer = () => {
                  <div className="logo">
                     <img src={logo} alt=''/>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Commodi, enim.
+                    Experience the world in style. From luxury resorts to exclusive travel experiences, we curate the finest destinations for the discerning traveler. Travel smart, travel better.
                     </p>
                     <div className="social__links d-flex align-items-conter gap-4">
                      <span>
@@ -107,7 +106,7 @@ const Footer = () => {
                                   <span><i class="ri-map-pin-line"></i></span>
                                   Address:
                                   </h6>  
-                                  <p className='mb-0'>Sylhet, Sri Lanka</p>
+                                  <p className='mb-0'>Colombo 2, Sri Lanka</p>
                            </ListGroupItem>
                           
                            <ListGroupItem  className='ps-0 border-0 d-flex align-items-center gap-3'>
@@ -115,7 +114,7 @@ const Footer = () => {
                                   <span><i class="ri-mail-line"></i></span>
                                   Email:
                                   </h6>  
-                                  <p className='mb-0'>dev.kfdjb09@gmail.com</p>
+                                  <p className='mb-0'>tourworld@gmail.com</p>
                            </ListGroupItem>
 
                            <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-3'>
@@ -123,7 +122,7 @@ const Footer = () => {
                                   <span><i class="ri-phone-fill"></i></span>
                                   Phone:
                                   </h6>  
-                                  <p className='mb-0'>+94712489176</p>
+                                  <p className='mb-0'>011-2234230</p>
                            </ListGroupItem>
                            
                         </ListGroup>

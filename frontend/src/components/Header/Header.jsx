@@ -1,9 +1,12 @@
-import React, {useRef, useEffect} from 'react'
+import React, {useRef, useEffect, useContext} from 'react'
 import { Container, Row,Button} from 'reactstrap'
-import {NavLink, Link} from 'react-router-dom'
+import {NavLink, Link, useNavigate} from 'react-router-dom'
 
 import logo from '../../assets/images/logo.png'
 import './header.css'
+import { AuthContext } from './../../context/AuthContext';
+
+
 const nav_link=[
   {
     path:'/home',
@@ -12,9 +15,9 @@ const nav_link=[
    
   {
     path:'/about',
-    display:'About'
+    display:'Admin'
   },
-  {
+  { 
     path:'/tours',
     display:'Tours'
   },
@@ -22,7 +25,16 @@ const nav_link=[
 ]
 const Header = () => {
 
-const headerRef = useRef(null)
+const headerRef = useRef(null);
+const menuRef = useRef(null);
+const navigate = useNavigate();
+const {user, dispatch} = useContext(AuthContext);
+
+const logout =() =>{
+  dispatch({type: 'LOGOUT'})
+  navigate('/')
+}
+
 //meek dmme header ek vithrak page ek scroll krddi header ek change wenne ne
 const stickyHeaderFunc =()=>{
   window.addEventListener('scroll', ()=>{
@@ -37,7 +49,11 @@ const stickyHeaderFunc =()=>{
 useEffect(()=>{
   stickyHeaderFunc()
   return window.removeEventListener('scroll', stickyHeaderFunc)//me
-})
+});
+
+const toggleMenu = ()=> menuRef.current.classList.toggle('show_menu')
+
+
   return (                             //methn ref={headerRef}
     <header className="header" ref={headerRef}>
       <Container>
@@ -52,7 +68,7 @@ useEffect(()=>{
 
 
 {/*===========menu start=========*/}
-          <div className="navigation">
+          <div className="navigation" ref={menuRef} onClick={toggleMenu}>
               <ul className="menu d-flex align-items-center gap-5">
                 {
                 nav_link.map((item, index)=>(
@@ -70,7 +86,16 @@ useEffect(()=>{
    <div className="nav_right d-flex align-items-center gap-4">
     <div className="nav_btns d-flex align-items-center gap-4">
 
-     
+    {/*===========after login display username home page right corner=========*/}
+    {
+        user? (
+        <> 
+           <h5 className='mb-0'>{user.username}</h5>
+           <Button className='btn btn-dark' onClick={logout}>Logout</Button>
+        </>
+  ) : (
+    <>
+    
     <Button
   tag={Link}
   to="/login"
@@ -85,11 +110,12 @@ useEffect(()=>{
 >
   Register
 </Button>
-
-
-
+    
+    </>
+  )}
+ {/*====================*/}
     </div>
-<span className="mobile_menu">
+<span className="mobile_menu" onClick={toggleMenu}>
 <i class="ri-menu-line"></i>
 </span>
    </div>

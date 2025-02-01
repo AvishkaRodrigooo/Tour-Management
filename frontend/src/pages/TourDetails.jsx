@@ -1,25 +1,30 @@
-import React, {useRef, useEffect, useState} from 'react';
+import React, {useRef, useEffect, useState, useContext} from 'react';
 import '../styles/tour-details.css'
 import { Container, Row, Col, Form, ListGroup } from 'reactstrap';
 import { useParams } from 'react-router-dom';
-import tourData from '../assets/data/tours'
+import { useNavigate } from 'react-router-dom';
+
 import calculateAvgRating from '../utils/avgRating';
 import avatar from "../assets/images/avatar.jpg"
 import Booking from '../components/Booking/Booking';
 import Newsletter from '../shared/Newsletter';
 
+import useFetch from '../hooks/useFetch';
+import { BASE_URL } from '../utils/config';
+
+import { AuthContext} from './../context/AuthContext';
+
 const TourDetails = () => {
  
-     const {id} = useParams()
-     const reviewMsgRef = useRef(' ')
-     const [tourRating, setTourRating] = useState(null)
+     const {id} = useParams();
+     const reviewMsgRef = useRef('');
+     const [tourRating, setTourRating] = useState(null);
+     const {user} = useContext(AuthContext);
 
-
-     // this is static data later we will call our API and load our data from database
-     const tour = tourData.find(tour=> tour.id == id)
+     //fetch data from database
+     const {data:tour , loading, error} = useFetch(`${BASE_URL}/tours/${id}`);//backend details tik id anuwa tour ek click krm display krnv
 
      //destructure properties from tour object
-
      const {
           photo,
           title,
@@ -32,24 +37,68 @@ const TourDetails = () => {
           maxGroupSize,
         }= tour;
 
-     const {totalRating, avgRating} = calculateAvgRating(reviews);
+        const { totalRating, avgRating } = calculateAvgRating(reviews || []);
+
  
      //format date
      const options = { day: "numeric", month:"long" , year:"numeric"};
      
     //submit request to the server
-     const submitHandler =(e)=>{///////////3800min
+     const submitHandler = async (e)=>{///////////3800min
       e.preventDefault();
-      const reviewText = reviewMsgRef.current.value
+      const reviewText = reviewMsgRef.current.value;
       
     
+      try{
+
+        if(!user || user===undefined || user===null){
+          alert('please sign in')
+        }
+        const reviewObj ={
+           username: user.username,
+           reviewText,
+           rating:tourRating
+        }
+
+        const res = await fetch(`${BASE_URL}/review/${id}`,{
+          method: 'post',
+          headers:{
+            'content-type':'application/json'
+          },
+          credentials:'include',
+          body:JSON.stringify(reviewObj)
+
+        });
+        const result = await res.json();
+        if(!res.ok) {
+          return
+          alert(result.message);
+        }
+        alert(result.message);
+      }catch(err){
+        alert(err.message);
+      }
+    
     // later will call api
-    }
+    };
+
+    useEffect(()=>{
+      window.scrollTo(0,0);
+    },[tour]);
+
   return (
 <>
 
      <section>
         <Container>
+          {
+            loading && <h4 className='text-center pt-5'>Loading......</h4>
+          }
+          {
+            error && <h4 className='text-center pt-5'>{error}</h4>
+          }
+          {
+            !loading && !error &&
             <Row>
                <Col lg='8'>
                   <div className="tour__content">
@@ -95,7 +144,8 @@ const TourDetails = () => {
 
                        {/*=====tour reviews section==========*/}
                        <div className="tour__reviews mt-4">
-                         <h4>Reviews ({reviews?.length} reviews)</h4>
+                       <h4>Reviews ({reviews?.length || 0} reviews)</h4>
+
                          <Form onSubmit={submitHandler}>
                             <div className="d-flex align-items-center gap-3 mb-4 rating__group">
                                <span onClick={()=> setTourRating(1)}>1 <i class="ri-star-s-fill"></i></span>
@@ -126,19 +176,19 @@ const TourDetails = () => {
                                             justify-content-between">
 
                                             <div>
-                                              <h5>Avishka</h5>
+                                              <h5>{review.username}</h5>
                                               <p>
-                                               {
-                                                new Date("01-18-2024").toLocaleDateString("en-US" , options) //date ek dl tiynne 
+                                               {//date ek fix review daan date ekm auto generate wenv
+                                                new Date(review.createdAt).toLocaleDateString("en-US" , options) //date ek dl tiynne 
                                                } 
                                               </p>
                                             </div>
                                                <span className='d-flex align-items-center'>
-                                                   5<i class="ri-star-s-fill"></i>
+                                                  {review.rating}<i class="ri-star-s-fill"></i>
                                                </span>
                                   
                                             </div>
-                                            <h6>Amazing tour</h6>
+                                            <h6>{review.reviewText}</h6>
                                         </div>
                                       </div>
                                     ))
@@ -153,6 +203,7 @@ const TourDetails = () => {
                <Booking tour={tour} avgRating={avgRating}/> 
                </Col>
             </Row> 
+}
         </Container>
      </section>
      <Newsletter/>

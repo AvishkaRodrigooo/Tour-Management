@@ -28,19 +28,16 @@ const Home = () => {
                   <Col lg='6'>
                     <div className="hero_content">
                         <div className="hero_subtitle d-flex align-items-center ">
-                             <Subtitle subtitle={'Know Before You Go'}/>
+                             <Subtitle subtitle={'Explore. Dream. Discover.'}/>
                              <img src={worldImg} alt=""/>
                         </div>
                         <h1>
-                          Travelling opens the door to creating{" "}
-                          <span className="highlight">memories</span>
+                        Explore the world, create memories, and live the{" "}
+                          <span className="highlight">adventure</span>
                         </h1>
 
                         <p>
-                          Lorem ipsum-dolor sit amet consectetur, adipisicing elit.
-                          Ullam ipsum nobis asperiores soluta voluptas quas voluptates.
-                          Molestiae tempora dignissimos, animi praesentium molestias
-                          perferendis porro expedita delectus. Soluta natus porro.
+                        Embark on unforgettable journeys with us! Whether you're seeking serene beach getaways, thrilling adventures in the mountains, or immersive city explorations, we have tailored travel experiences just for you. Our mission is to provide you with the best destinations, handpicked deals, and expert travel tips to make your next trip extraordinary.
                         </p>
                     </div>
                   </Col>
@@ -53,7 +50,7 @@ const Home = () => {
 
       </Col>
       <Col ld='2'>
-           <div className="hero__img-box mt-4">
+           <div className="hero__img-box hero__video-box mt-4">
            <video src={heroVideo} alt='' controls/>
 
            </div>
@@ -114,9 +111,9 @@ const Home = () => {
                                <h2>With our all experience<br/>we will serve you</h2>
                           
                           <p>
-                            Lorem ipsum dolor sit amet, censectetur adipising elit.
+                             Your best choice.
                             <br/>
-                            Quas aliquam , hic tempora inventore suscipt unde.
+                            Best Experinces.
                           </p>
                           </div>
 

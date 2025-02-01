@@ -1,0 +1,83 @@
+.admin-dashboard {
+    padding: 40px 0;
+    background-color: #f8f9fa;
+  }
+  
+  .sidebar {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    min-height: 100vh;
+    
+  }
+  
+  .admin-menu {
+    text-align: left;
+  }
+  
+  .menu-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .admin-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .admin-menu ul li {
+    margin: 15px 0;
+  }
+  
+  .admin-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 10px;
+    transition: 0.3s;
+  }
+  
+  .admin-menu ul li a:hover {
+    background-color: #495057;
+    border-radius: 5px;
+  }
+  
+  .dashboard-content {
+    padding: 20px;
+  }
+  
+  .dashboard-title {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .dashboard-card {
+    background: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dashboard-card h3 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .dashboard-card p {
+    font-size: 16px;
+    color: gray;
+  }
+  
+  .primary__btn {
+    background-color: #ff8c00;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .primary__btn a {
+    text-decoration: none;
+    color: white;
+  }
+  

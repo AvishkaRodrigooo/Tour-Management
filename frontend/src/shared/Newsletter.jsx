@@ -20,8 +20,7 @@ const Newsletter = () => {
                   </div>
 
                    <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    obcaecati adipisci in,provident facere ipsam?
+                   Stay updated with the latest travel tips, destination guides, and exclusive deals.
                    </p>
                   </div>
                 </Col>

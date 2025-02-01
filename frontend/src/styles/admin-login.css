@@ -1,0 +1,26 @@
+.login-page {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-card {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+  }
+  
+  .login-card .text-center {
+    margin-bottom: 20px;
+  }
+  
+  .login-card .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .login-card .btn {
+    margin-top: 1rem;
+  }
+  

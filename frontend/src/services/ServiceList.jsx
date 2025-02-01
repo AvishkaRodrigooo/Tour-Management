@@ -11,19 +11,19 @@ const ServicesData =[
     {                    //methn enter krn details tik ServiceCard eke display karnva
         imgUrl: weatherImg,
         title: "Calculate Weather",
-        desc:"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        desc:"Get Real-Time Weather Updates for Your Destination.Update your tour weather and best.",
 
     },
     {
         imgUrl: guideImg,
         title: "Best Tour Guide",
-        desc:"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        desc:"Experience the best with expert recommendations and seamless travel planning.",
 
     },
     {
         imgUrl: customizationImg,
         title: "Customization",
-        desc:"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        desc:"Experience the best with expert recommendations and seamless travel planning.",
 
     },
     
@@ -32,7 +32,7 @@ const ServiceList = () => {
   return (
     <>
              {ServicesData.map((item,index) =>(
-                <Col lg="3" key={index}>
+                <Col lg="3" md="6" sm="12" className="mb-4" key={index}>
                     <ServiceCard item={item}  />
                 </Col>
              ))}
