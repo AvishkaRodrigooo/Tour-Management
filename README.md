@@ -1,6 +1,6 @@
-# ITP - Salon Management System  
+# Tours & Travels Booking Management System  
 
-This project is a **Salon Management System**, developed as a group project during the second semester of the second year at university.  
+This project is a full-stack travel booking application built using the MERN Stack, designed to provide a seamless user experience for booking tours, managing travel packages, and handling secure user authentication.
 
 ## Technologies Used  
 
