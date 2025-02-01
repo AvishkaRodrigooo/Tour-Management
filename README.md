@@ -4,39 +4,45 @@ This project is a full-stack travel booking application built using the MERN Sta
 
 ## Technologies Used  
 
-We utilized the **MERN Stack** technology for the development of this system:  
-- **MongoDB**: For database management.  
-- **Express.js**: For building the back-end API.  
-- **React.js**: For creating a dynamic front-end interface.  
-- **Node.js**: For server-side programming.  
+The project is divided into two key parts:
 
+Frontend (UI Design):  
+- **React,js**: For building a dynamic and interactive user interface.
+- **JWT (JSON Web Token) **:  JWT (JSON Web Token).
+ Backend (API Development):
+- **Node.js & Express.js**:  For handling server-side logic and API endpoints.
+- **MongoDB **: For efficient database management and storage of user data, bookings, and tour details.
+- **JWT (JSON Web Token)**:To secure API endpoints and manage user authentication.
 ## Main Features  
 
 The system consists of the following core modules:  
-- **Inventory Management System**: Track and manage salon inventory efficiently.  
-- **Service Management System**: Manage the salon's services and their availability.  
-- **Leave Management System**: Handle staff leave requests and approvals.  
-- **Salary Management System**: Process and manage employee salaries.  
-- **Job Vacancy Management System**: Manage job postings and applications for salon vacancies.  
+- **User Booking System**: Allow users to browse and book tours.
+- **Secure Authentication System**: User registration and login using JWT-based authentication.
+- **Reviews & Ratings**: Users can leave feedback and rate tour experiences
+                         Only register users can access.
+                         Display customer reviews for credibility and user engagement.
+- **Search & Filtering System**: Filtering options to help users find the perfect tour.  
+
 
 ## Purpose  
 
-This project was created to provide a comprehensive solution for managing salon operations effectively, while showcasing our skills in the MERN stack. 
+This MERN Stack Tours & Travels Booking Website aims to deliver a fully functional and secure platform for travel planning and management, highlighting expertise in MERN Stack development, JWT authentication, and full-stack API integration.
 
-## Login page
-![image alert](https://github.com/AvishkaRodrigooo/Salon-Management-System/blob/master/Loginpage.png)
+I’m currently developing this project.I home to develop admin side. 
 
-## All Vacancies
-![image alert](https://github.com/AvishkaRodrigooo/Salon-Management-System/blob/master/Vacanciespage.png)
+## Registe page
+![image alert](https://github.com/AvishkaRodrigooo/Tour-Management/blob/main/Register.png)
 
-## Job Application
-![image alert](https://github.com/AvishkaRodrigooo/Salon-Management-System/blob/master/JobApplication.png)
+## Add Review
+![image alert](https://github.com/AvishkaRodrigooo/Tour-Management/blob/main/AddRewiew.png)
 
-## Admin Add Vacancy
-![image alert](https://github.com/AvishkaRodrigooo/Salon-Management-System/blob/master/AdminAddVacancypage1.png)
+## Home page
+![image alert](https://github.com/AvishkaRodrigooo/Tour-Management/blob/main/Home.png)
 
-## All Application
-![image alert](https://github.com/AvishkaRodrigooo/Salon-Management-System/blob/master/AllApplications.png)
+## Tours page
+![image alert](https://github.com/AvishkaRodrigooo/Tour-Management/blob/main/Tours.png)
 
-## Add Vacancy
-![image alert](https://github.com/AvishkaRodrigooo/Salon-Management-System/blob/master/AdminAddVacancypage.png)
+## Booking page
+![image alert](https://github.com/AvishkaRodrigooo/Tour-Management/blob/main/Booking.png)
+
+
