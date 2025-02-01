@@ -34,7 +34,7 @@ I’m currently developing this project.I home to develop admin side.
 ![image alert](https://github.com/AvishkaRodrigooo/Tour-Management/blob/main/Register.png)
 
 ## Add Review
-![image alert](https://github.com/AvishkaRodrigooo/Tour-Management/blob/main/AddRewiew.png)
+![image alert](https://github.com/AvishkaRodrigooo/Tour-Management/blob/main/AddReview.png)
 
 ## Home page
 ![image alert](https://github.com/AvishkaRodrigooo/Tour-Management/blob/main/Home.png)
