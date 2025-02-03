@@ -29,6 +29,8 @@ The system consists of the following core modules:
 
 This MERN Stack Tours & Travels Booking Website aims to deliver a fully functional and secure platform for travel planning and management, highlighting expertise in MERN Stack development, JWT authentication, and full-stack API integration.
 
+Backend - npm run start-dev
+Frontend - npm start
 I’m currently developing this project.I home to develop admin side. 
 
 ## Registe page
