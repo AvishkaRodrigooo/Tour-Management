@@ -9,7 +9,7 @@ The project is divided into two key parts:
 Frontend (UI Design):  
 - **React,js**: For building a dynamic and interactive user interface.
 - **JWT(JSON Web Token)**:  JWT (JSON Web Token).
- Backend (API Development):
+Backend (API Development):
 - **Node.js & Express.js**:  For handling server-side logic and API endpoints.
 - **MongoDB**: For efficient database management and storage of user data, bookings, and tour details.
 - **JWT(JSON Web Token)**: To secure API endpoints and manage user authentication.
