@@ -24,18 +24,13 @@ const corsOptions = {
 
 //database connection
 mongoose.set("strictQuery",false);
-const connect = async()=>{
-    try{
-           await mongoose.connect(process.env.MONGO_URI,{
-             useNewUrlParser:true,
-             useUnifiedTopology:true
-     });
-
-     console.log('mongoDB databse connected');
-    }catch(err){
-
-        console.log('mongoDB databse failed');
-    }
+const connect = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log('mongoDB database connected');
+  } catch (err) {
+    console.error('mongoDB database failed:', err.message);
+  }
 };
 
 //middleware
